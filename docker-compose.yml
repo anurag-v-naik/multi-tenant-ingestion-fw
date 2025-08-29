@@ -1,0 +1,43 @@
+# Use version 3.8 of the Docker Compose file format.
+# This is a recent and recommended version.
+version: '3.8'
+
+# Define the services (containers) for your application.
+services:
+
+  # Service for the frontend application.
+  frontend:
+    # Use the build context to tell Docker where to find the Dockerfile.
+    # The 'context' is the path to the directory containing the Dockerfile.
+    build:
+      context: ./frontend
+    # Map port 3000 from the container to port 3000 on your host machine.
+    # This lets you access the frontend at http://localhost:3000.
+    ports:
+      - "3000:3000"
+    # Restart the container if it crashes.
+    restart: unless-stopped
+    # Define volumes for live development.
+    # This mounts your local frontend code into the container,
+    # so changes you make locally are immediately reflected.
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+  # Service for the backend application.
+  backend:
+    # Set the build context to the backend directory.
+    build:
+      context: ./backend
+    # Map port 8080 from the container to port 8080 on your host machine.
+    # This lets you access the backend at http://localhost:8080.
+    ports:
+      - "8080:8080"
+    # Restart the container if it crashes.
+    restart: unless-stopped
+    # Define volumes for live development.
+    # This mounts your local backend code into the container.
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+

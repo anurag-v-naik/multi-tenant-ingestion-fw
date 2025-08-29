@@ -1,0 +1,28 @@
+{
+  "name": "multi-tenant-ingestion-fw",
+  "version": "1.0.0",
+  "description": "The Data Ingestion Framework is a powerful tool for automating data movement and processing. It is composed of three main components: a backend to manage configurations, a frontend for user interaction, and a Python engine for pipeline execution.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anurag-v-naik/multi-tenant-ingestion-fw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anurag-v-naik/multi-tenant-ingestion-fw/issues"
+  },
+  "homepage": "https://github.com/anurag-v-naik/multi-tenant-ingestion-fw#readme",
+  "dependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  }
+}
